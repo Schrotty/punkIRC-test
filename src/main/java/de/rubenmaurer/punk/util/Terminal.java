@@ -171,6 +171,19 @@ public class Terminal {
                 .single("count", String.valueOf(responses.length)).render());
     }
 
+    /**
+     * Print a Log message.
+     *
+     * @param message the message
+     */
+    public static void printLog(String message) {
+        if (message != null && !message.isEmpty()) {
+            System.err.println(Template.get("LOG")
+                .single("type", new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()))
+                .single("message", message).render());
+        }
+    }
+
     /* === LOGGING === */
 
     /**
